@@ -1,0 +1,42 @@
+.ng-pristine {
+     border: 1px solid green;
+}
+.ng-dirty {
+    border: 1px solid yellow;
+}
+.ng-invalid.ng-dirty {
+    border: 1px solid red;
+}
+
+.ng-valid.ng-dirty {
+    border: 1px solid green;
+}
+
+input.ng-invalid-minlength.ng-dirty {
+    border: 1px solid blue;
+}
+input.ng-invalid-maxlength.ng-dirty {
+    border: 1px solid blue;
+}
+
+#emailListing {
+    margin-top: 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    list-style: none;
+}
+
+.emailListing img{
+
+}
+
+.emailListing .date{
+    font-size: 0.5em;
+    color: blue;
+    display: none;
+}
+
+.emailListing .subject {
+    font-size: 0.8em;
+}
+
