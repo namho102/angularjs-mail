@@ -1,7 +1,7 @@
 <div class="small-4 columns" ng-controller="MailListingController">
-    <h1>Sidebar</h1>
+    <input type="search" placeholder="Filter messages" ng-model="search"/>
     <ul id="emailListing">
-        <li ng-repeat="mail in email" ng-click="setSelectedMail(mail)">
+        <li ng-repeat="mail in (email | orderBy:'send_at':true |filter: search)" ng-click="setSelectedMail(mail)">
             <div class="container emailListing" ng-class="{selected : isSelected(mail)}">
                 <div class="small-8 columns">{{mail.from}}</div>
                 <div class="small-12 columns">{{mail.subject}}</div>
