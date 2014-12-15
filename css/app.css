@@ -26,6 +26,12 @@ input.ng-invalid-maxlength.ng-dirty {
     list-style: none;
 }
 
+.emailListing {
+    height: 120px;
+    overflow: hidden;
+    padding: 13px;
+}
+
 .emailListing img{
 
 }
