@@ -46,3 +46,11 @@ input.ng-invalid-maxlength.ng-dirty {
     font-size: 0.8em;
 }
 
+.emailListing:hover {
+    background-color: #eee;
+}
+
+#emailListing .selected {
+    background-color: #bbb;
+
+}
