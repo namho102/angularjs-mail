@@ -44,7 +44,8 @@ textarea {
 }
 
 .emailListing img{
-
+    width: 40px;
+    height: 40px;
 }
 
 .emailListing .date{
