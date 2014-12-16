@@ -1,29 +1,40 @@
-.ng-pristine {
-     border: 1px solid green;
+.settings .ng-pristine {
+     border: 1px solid #5da423;
 }
-.ng-dirty {
-    border: 1px solid yellow;
+.settings .ng-dirty {
+    border: 1px solid #f1c40f;
 }
-.ng-invalid.ng-dirty {
-    border: 1px solid red;
-}
-
-.ng-valid.ng-dirty {
-    border: 1px solid green;
+.settings .ng-invalid.ng-dirty {
+    border: 1px solid #c60f13;
 }
 
-input.ng-invalid-minlength.ng-dirty {
-    border: 1px solid blue;
-}
-input.ng-invalid-maxlength.ng-dirty {
-    border: 1px solid blue;
+.settings  .ng-valid.ng-dirty {
+    border: 1px solid #5da423;
 }
 
+.settings  input.ng-invalid-minlength.ng-dirty {
+    border: 1px solid #2ba6cb;
+}
+.settings input.ng-invalid-maxlength.ng-dirty {
+    border: 1px solid #2ba6cb;
+}
+
+.mailIntro  {
+    margin-top: 20px;
+}
+
+textarea {
+    height: 100px;
+}
 #emailListing {
     margin-top: 20px;
     overflow-y: scroll;
     overflow-x: hidden;
     list-style: none;
+}
+
+.mailSide {
+    margin-top: 20px;
 }
 
 .emailListing {
