@@ -1,11 +1,8 @@
-<div class="small-4 columns" ng-controller="MailListingController">
+<div class="small-4 columns mailSide" ng-controller="MailListingController">
     <input type="search" placeholder="Filter messages" ng-model="search"/>
     <ul id="emailListing">
-        <li ng-repeat="mail in (email | orderBy:'send_at':true |filter: search)" ng-click="setSelectedMail(mail)">
-            <div class="container emailListing" ng-class="{selected : isSelected(mail)}">
-                <div class="small-8 columns">{{mail.from}}</div>
-                <div class="small-12 columns">{{mail.subject}}</div>
-            </div>
+        <li email-listing email="mail" action="setSelectedMail(selectedMail)" ng-repeat="mail in (email |
+         orderBy:'send_at':true |filter: search)" >
         </li>
     </ul>
 </div>
@@ -14,7 +11,7 @@
     <div ng-show="!selectedMail">
         <h1>No conversation selected</h1>
     </div>
-    <div ng-show="selectedMail">
+    <div ng-show="selectedMail" class="mailIntro">
         <form id="replyForm" ng-submit="sendEmailReply()" ng-show="showingReply">
             <div class="row collapse">
                 <div class="small-1 columns"><span class="prefix">To</span></div>
@@ -34,7 +31,7 @@
         </div>
         <div class="row actions">
             <div class="small-8 columns">{{selectedMail.from}} to {{selectedMail.to}}</div>
-            <a ng-click="toggleReplyForm()" class="button radius push-1">Reply</a>
+            <a ng-click="toggleReplyForm()" class="button radius push-1" ng-show="!showingReply">Reply</a>
         </div>
         <div class="small-12 columns" ng-bind="selectedMail.body"></div>
     </div>
