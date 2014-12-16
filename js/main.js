@@ -58,6 +58,33 @@ app.controller('HomeController', function($scope) {
     };
 });
 
+app.directive('emailListing', function() {
+    return {
+        restrict: 'EA',
+        replace: false,
+        scope: {
+            email: '=',
+            action: '&',
+            shouldUseGravater: '@'
+
+        },
+        templateUrl: 'templates/emailListing.html',
+        controller: ['$scope', '$element', '$attrs', '$transclude',
+            function($scope, $element, $attrs, $transclude) {
+                $scope.handleClick = function() {
+                    $scope.action({selectedMail: $scope.email})
+                };
+            }
+        ],
+        link: function(scope, iElement, iAttrs, controller) {
+            iElement.bind('click', function() {
+                iElement.parent().children().removeClass('selected');
+               iElement.addClass('selected');
+            });
+        }
+    }
+});
+
 app.controller('MailListingController', ['$scope', 'mailService', function($scope, mailService) {
     $scope.email = [];
 
