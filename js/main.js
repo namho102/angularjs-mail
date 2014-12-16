@@ -59,13 +59,14 @@ app.controller('HomeController', function($scope) {
 });
 
 app.directive('emailListing', function() {
+    var imageUrl = "https://gravatar.com/avatar";
     return {
         restrict: 'EA',
         replace: false,
         scope: {
             email: '=',
             action: '&',
-            shouldUseGravater: '@'
+            gravatarSize: '@'
 
         },
         templateUrl: 'templates/emailListing.html',
@@ -77,6 +78,7 @@ app.directive('emailListing', function() {
             }
         ],
         link: function(scope, iElement, iAttrs, controller) {
+            scope.gravatarImage = imageUrl;
             iElement.bind('click', function() {
                 iElement.parent().children().removeClass('selected');
                iElement.addClass('selected');
